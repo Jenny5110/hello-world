@@ -1,6 +1,4 @@
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 
 public class checkText{
@@ -46,7 +44,10 @@ public class checkText{
 		String after = text.trim().replaceAll(" +", " ");
 
 		/* Creating the list 'words' and fiils it with every word on our text */
-		List<String> wordsList = Arrays.asList(after.split("\\s*,\\s*"));
+		ArrayList<String> wordsList = new ArrayList<String>();
+		for(String i : after.split(" ")) {
+				    wordsList.add(i);
+		}
 
 		return wordsList;
 	}
