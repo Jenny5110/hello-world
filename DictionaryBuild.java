@@ -48,7 +48,6 @@ public class DictionaryBuild {
 				 leksikey = input.next();
 				 leksivalue = new Leksi(leksikey);
 				 Dictionary.put(leksikey, leksivalue);
-				 System.out.printf("%s \n", leksikey);
 				 }
 		 }
 		 catch (NoSuchElementException elementException)
