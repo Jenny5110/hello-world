@@ -8,7 +8,7 @@ public class checkText{
 		/**
 		 * Splits the words in the text, pushes them into a List and counts them.
 		 */
-		public List<String> wordSplit(String text){
+		public static List<String> wordSplit(String text){
 
 		StringBuilder sb = new StringBuilder(text);
 		/* Avoiding errors */
