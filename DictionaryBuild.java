@@ -19,7 +19,7 @@ public class DictionaryBuild {
 	public static void openFile(){
 		try 
 		{
-			input = new Scanner(Paths.get("lextest.txt")); 
+			input = new Scanner(Paths.get("greek_dictionary.txt")); 
 		}
 		catch (IOException ioException)
 		{
