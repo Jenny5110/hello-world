@@ -3,41 +3,42 @@ import java.util.HashSet;
 import java.util.HashMap;
 
 public class lathosstofonien {
-	protected String [] yota = {"ι", "η", "οι", "ει", "υ"};
-	protected String [] omikron = {"ο", "ω"};
-	protected String [] epsilon = {"ε", "αι"};
-	protected String [] eu = {"ευ", "εβ", "εφ"};
-	protected String [] au = {"αυ", "αβ", "αφ"};
-	protected String [] gk = {"γκ", "γγ"};
-	protected String [] tz = {"τζ", "ντζ"};
-	protected String [] beta = {"β","ββ"};
-	protected String [] kapa = {"κ", "κκ"};
-	protected String [] lamda = {"λ", "λλ"};
-	protected String [] mi = {"μ", "μμ"};
-	protected String [] ni = {"ν", "νν"};
-	protected String [] pi = {"π", "ππ"};
-	protected String [] ro = {"ρ", "ρρ"};
-	protected String [] sigma = {"σ", "σσ"};
-	protected String [] taf = {"τ", "ττ"};
+	protected String [] yota = {"ΞΉ", "Ξ·", "ΞΏΞΉ", "ΞµΞΉ", "Ο…"};
+	protected String [] omikron = {"ΞΏ", "Ο‰"};
+	protected String [] epsilon = {"Ξµ", "Ξ±ΞΉ"};
+	protected String [] eu = {"ΞµΟ…", "ΞµΞ²", "ΞµΟ†"};
+	protected String [] au = {"Ξ±Ο…", "Ξ±Ξ²", "Ξ±Ο†"};
+	protected String [] gk = {"Ξ³ΞΊ", "Ξ³Ξ³"};
+	protected String [] tz = {"Ο„Ξ¶", "Ξ½Ο„Ξ¶"};
+	protected String [] beta = {"Ξ²","Ξ²Ξ²"};
+	protected String [] kapa = {"ΞΊ", "ΞΊΞΊ"};
+	protected String [] lamda = {"Ξ»", "Ξ»Ξ»"};
+	protected String [] mi = {"ΞΌ", "ΞΌΞΌ"};
+	protected String [] ni = {"Ξ½", "Ξ½Ξ½"};
+	protected String [] pi = {"Ο€", "Ο€Ο€"};
+	protected String [] ro = {"Ο", "ΟΟ"};
+	protected String [] sigma = {"Οƒ", "ΟƒΟƒ"};
+	protected String [] taf = {"Ο„", "Ο„Ο„"};
+	
 	
 	public void lathosSearch(String word) {
 		Leksi lex = new Leksi(word);
-		HashMap<Integer, String> pinakas;/*Integer η θέση και String το φωνηεν συμφωνο*/
-		HashSet <String> periptosis = new HashSet<String>() ;/* θα χρειαστει για μετα μοναδικοτητα λεξεων*/
-		pinakas = pinakassimfon.tableMaker(lex.getRaw()); /*Ο πίνακας με τα φωνηεντα συμφωνα με τις θεσεις τους στη λέξη*/
+		HashMap<Integer, String> pinakas;/*Integer Ξ· ΞΈΞ­ΟƒΞ· ΞΊΞ±ΞΉ String Ο„ΞΏ Ο†Ο‰Ξ½Ξ·ΞµΞ½ ΟƒΟ…ΞΌΟ†Ο‰Ξ½ΞΏ*/
+		HashSet <String> periptosis = new HashSet<String>() ;/* ΞΈΞ± Ο‡ΟΞµΞΉΞ±ΟƒΟ„ΞµΞΉ Ξ³ΞΉΞ± ΞΌΞµΟ„Ξ± ΞΌΞΏΞ½Ξ±Ξ΄ΞΉΞΊΞΏΟ„Ξ·Ο„Ξ± Ξ»ΞµΞΎΞµΟ‰Ξ½*/
+		pinakas = pinakassimfon.tableMaker(lex.getRaw()); /*Ξ Ο€Ξ―Ξ½Ξ±ΞΊΞ±Ο‚ ΞΌΞµ Ο„Ξ± Ο†Ο‰Ξ½Ξ·ΞµΞ½Ο„Ξ± ΟƒΟ…ΞΌΟ†Ο‰Ξ½Ξ± ΞΌΞµ Ο„ΞΉΟ‚ ΞΈΞµΟƒΞµΞΉΟ‚ Ο„ΞΏΟ…Ο‚ ΟƒΟ„Ξ· Ξ»Ξ­ΞΎΞ·*/
 		int epomeno = 0;
-		int a; /*Ο μετρητης για τις  for */ 
+		int a; /*Ξ ΞΌΞµΟ„ΟΞ·Ο„Ξ·Ο‚ Ξ³ΞΉΞ± Ο„ΞΉΟ‚  for */ 
 		StringBuffer test;
-		ArrayList <StringBuffer> sindiasmoi = new ArrayList (); /*οι συνδυασμοι των λεξεων (θα υπάρχουν και διπλοτυπα)*/
-		ArrayList <String> endexomenes = new ArrayList();/*Οι συνδυασμόι των λέξεων σε Στρινγκ με μοναδικότητα*/
+		ArrayList <StringBuffer> sindiasmoi = new ArrayList (); /*ΞΏΞΉ ΟƒΟ…Ξ½Ξ΄Ο…Ξ±ΟƒΞΌΞΏΞΉ Ο„Ο‰Ξ½ Ξ»ΞµΞΎΞµΟ‰Ξ½ (ΞΈΞ± Ο…Ο€Ξ¬ΟΟ‡ΞΏΟ…Ξ½ ΞΊΞ±ΞΉ Ξ΄ΞΉΟ€Ξ»ΞΏΟ„Ο…Ο€Ξ±)*/
+		ArrayList <String> endexomenes = new ArrayList();/*ΞΞΉ ΟƒΟ…Ξ½Ξ΄Ο…Ξ±ΟƒΞΌΟΞΉ Ο„Ο‰Ξ½ Ξ»Ξ­ΞΎΞµΟ‰Ξ½ ΟƒΞµ Ξ£Ο„ΟΞΉΞ½Ξ³ΞΊ ΞΌΞµ ΞΌΞΏΞ½Ξ±Ξ΄ΞΉΞΊΟΟ„Ξ·Ο„Ξ±*/
 		sindiasmoi.add(lex.getRaw());
 		for (int i = 0; i < word.length(); i++) {
 			for (int j = 0; j < sindiasmoi.size(); j++) {
 				test = sindiasmoi.get(j);
 				epomeno = i + 1;
 				if (pinakas.containsKey(i) && pinakas.containsKey(epomeno)) {
-					if (pinakas.get(i).equals("ε")) {
-						if (pinakas.get(epomeno).equals("ι")) {
+					if (pinakas.get(i).equals("Ξµ")) {
+						if (pinakas.get(epomeno).equals("ΞΉ")) {
 							for (a = 0; a < yota.length; a++) {
 								test = test.delete(i, epomeno + 1);
 								test = test.insert(i, yota[a]);
@@ -45,7 +46,7 @@ public class lathosstofonien {
 								periptosis.add(test.toString());
 							}
 						
-						} else if (pinakas.get(epomeno).equals("υ") || pinakas.get(epomeno).equals("β") || pinakas.get(epomeno).equals("φ")) {
+						} else if (pinakas.get(epomeno).equals("Ο…") || pinakas.get(epomeno).equals("Ξ²") || pinakas.get(epomeno).equals("Ο†")) {
 							for (a = 0; a < eu.length; a++) {
 								test = test.delete(i, epomeno + 1);
 								test = test.insert(i, eu[a]);
@@ -53,15 +54,15 @@ public class lathosstofonien {
 								periptosis.add(test.toString());
 							}
 						
-						} else if (pinakas.get(i).equals("α")) {
-							if (pinakas.get(epomeno).equals("ι")) {
+						} else if (pinakas.get(i).equals("Ξ±")) {
+							if (pinakas.get(epomeno).equals("ΞΉ")) {
 								for (a = 0; a < epsilon.length; a++) {
 									test = test.delete(i, epomeno + 1);
 									test = test.insert(i, epsilon[a]);
 									sindiasmoi.add(test);
 									periptosis.add(test.toString());
 								} 
-							} else if (pinakas.get(epomeno).equals("υ") || pinakas.get(epomeno).equals("φ") || pinakas.get(epomeno).equals("β")) {
+							} else if (pinakas.get(epomeno).equals("Ο…") || pinakas.get(epomeno).equals("Ο†") || pinakas.get(epomeno).equals("Ξ²")) {
 								for (a = 0; a < au.length; a++) {
 									test = test.delete(i, epomeno + 1);
 									test = test.insert(i, au[a]);
@@ -69,19 +70,19 @@ public class lathosstofonien {
 									periptosis.add(test.toString());
 								}
 							}
-						} else if (pinakas.get(i).equals("o")) {
-							if (pinakas.get(epomeno).equals("ι")) {
+						} else if (pinakas.get(i).equals("ΞΏ")) {
+							if (pinakas.get(epomeno).equals("ΞΉ")) {
 								for (a = 0; a < yota.length; a++) {
 									test = test.delete(i, epomeno + 1);
 									test = test.insert(i, yota[a]);
 									sindiasmoi.add(test);
 									periptosis.add(test.toString());
 								}
-							} else if (pinakas.get(epomeno).equals("υ")) {
+							} else if (pinakas.get(epomeno).equals("Γµ")) {
 							
 							}
-						} else if (pinakas.get(i).equals("γ")) {
-							if (pinakas.get(epomeno).equals("γ")) {
+						} else if (pinakas.get(i).equals("Ξ³")) {
+							if (pinakas.get(epomeno).equals("Ξ³")) {
 								for (a = 0; a < gk.length; a++) {
 									test = test.delete(i, epomeno + 1);
 									test = test.insert(i, gk[a]);
@@ -89,15 +90,15 @@ public class lathosstofonien {
 									periptosis.add(test.toString());
 								}
 							}
-						} else if (pinakas.get(epomeno).equals("κ")) {
+						} else if (pinakas.get(epomeno).equals("ΞΊ")) {
 								for (a = 0; a < kapa.length; a++) {
 									test = test.delete(i, epomeno + 1);
 									test = test.insert(i, kapa[a]);
 									sindiasmoi.add(test);
 									periptosis.add(test.toString());
 								}
-						} else if (pinakas.get(i).equals("ν")) {
-							if (pinakas.get(epomeno).equals("ν")) {
+						} else if (pinakas.get(i).equals("Ξ½")) {
+							if (pinakas.get(epomeno).equals("Ξ½")) {
 								for (a = 0; a < ni.length; a++) {
 									test = test.delete(i, epomeno + 1);
 									test = test.insert(i, ni[a]);
@@ -105,8 +106,8 @@ public class lathosstofonien {
 									periptosis.add(test.toString());
 								}
 						
-							} else if (pinakas.get(epomeno).equals("τ") && pinakas.containsKey(epomeno + 1)) {
-								if (pinakas.get(epomeno + 1).equals("ζ")) {
+							} else if (pinakas.get(epomeno).equals("Ο„") && pinakas.containsKey(epomeno + 1)) {
+								if (pinakas.get(epomeno + 1).equals("Ξ¶")) {
 									for (a = 0; a < tz.length; a++) {
 										test = test.delete(i, epomeno + 2);
 										test = test.insert(i, tz[a]);
@@ -117,8 +118,8 @@ public class lathosstofonien {
 						
 								}
 							}
-						} else if (pinakas.get(i).equals("τ")) {
-							if (pinakas.get(epomeno).equals("ζ")) {
+						} else if (pinakas.get(i).equals("Ο„")) {
+							if (pinakas.get(epomeno).equals("Ξ¶")) {
 								for (a = 0; a < tz.length; a++) {
 									test = test.delete(i, epomeno + 1);
 									test = test.insert(i, tz[a]);
@@ -126,7 +127,7 @@ public class lathosstofonien {
 									periptosis.add(test.toString());
 								}
 						
-							} else if (pinakas.get(i).equals("τ")) {
+							} else if (pinakas.get(i).equals("Ο„")) {
 								for (a = 0; a < taf.length; a++) {
 									test = test.delete(i, epomeno + 1);
 									test = test.insert(i, taf[a]);
@@ -136,8 +137,8 @@ public class lathosstofonien {
 						
 							}
 					
-						} else if (pinakas.get(i).equals("β")) {
-							if (pinakas.get(epomeno).equals("β")) {
+						} else if (pinakas.get(i).equals("Ξ²")) {
+							if (pinakas.get(epomeno).equals("Ξ²")) {
 								for (a = 0; a < beta.length; a++) {
 									test = test.delete(i, epomeno + 1);
 									test = test.insert(i, beta[a]);
@@ -145,8 +146,8 @@ public class lathosstofonien {
 									periptosis.add(test.toString());
 								}
 							}
-						} else if (pinakas.get(i).equals("κ")) {
-							if (pinakas.get(epomeno).equals("κ")) {
+						} else if (pinakas.get(i).equals("ΞΊ")) {
+							if (pinakas.get(epomeno).equals("ΞΊ")) {
 								for (a = 0; a < kapa.length; a++) {
 									test = test.delete(i, epomeno + 1);
 									test = test.insert(i, kapa[a]);
@@ -154,8 +155,8 @@ public class lathosstofonien {
 									periptosis.add(test.toString());
 								}
 							}
-						} else if (pinakas.get(i).equals("λ")) {
-							if (pinakas.get(epomeno).equals("λ")) {
+						} else if (pinakas.get(i).equals("Ξ»")) {
+							if (pinakas.get(epomeno).equals("Ξ»")) {
 								for (a = 0; a < lamda.length; a++) {
 									test = test.delete(i, epomeno + 1);
 									test = test.insert(i, lamda[a]);
@@ -163,8 +164,8 @@ public class lathosstofonien {
 									periptosis.add(test.toString());
 								}
 							}
-						} else if (pinakas.get(i).equals("μ")) {
-							if (pinakas.get(epomeno).equals("μ")) {
+						} else if (pinakas.get(i).equals("ΞΌ")) {
+							if (pinakas.get(epomeno).equals("ΞΌ")) {
 								for (a = 0; a < mi.length; a++) {
 									test = test.delete(i, epomeno + 1);
 									test = test.insert(i, mi[a]);
@@ -172,8 +173,8 @@ public class lathosstofonien {
 									periptosis.add(test.toString());
 								}
 							}
-						} else if (pinakas.get(i).equals("ν")) {
-							if (pinakas.get(epomeno).equals("ν")) {
+						} else if (pinakas.get(i).equals("Ξ½")) {
+							if (pinakas.get(epomeno).equals("Ξ½")) {
 								for (a = 0; a < ni.length; a++) {
 									test = test.delete(i, epomeno + 1);
 									test = test.insert(i, ni[a]);
@@ -181,8 +182,8 @@ public class lathosstofonien {
 									periptosis.add(test.toString());
 								}
 							}
-						} else if (pinakas.get(i).equals("π")) {
-							if (pinakas.get(epomeno).equals("π")) {
+						} else if (pinakas.get(i).equals("Ο€")) {
+							if (pinakas.get(epomeno).equals("Ο€")) {
 								for (a = 0; a < pi.length; a++) {
 									test = test.delete(i, epomeno + 1);
 									test = test.insert(i, pi[a]);
@@ -190,8 +191,8 @@ public class lathosstofonien {
 									periptosis.add(test.toString());
 								}
 							}
-						} else if (pinakas.get(i).equals("ρ")) {
-							if (pinakas.get(epomeno).equals("ρ")) {
+						} else if (pinakas.get(i).equals("Ο")) {
+							if (pinakas.get(epomeno).equals("Ο")) {
 								for (a = 0; a < ro.length; a++) {
 									test = test.delete(i, epomeno + 1);
 									test = test.insert(i, ro[a]);
@@ -199,8 +200,8 @@ public class lathosstofonien {
 									periptosis.add(test.toString());
 								}
 							}
-						} else if (pinakas.get(i).equals("σ")) {
-							if (pinakas.get(epomeno).equals("σ")) {
+						} else if (pinakas.get(i).equals("Οƒ")) {
+							if (pinakas.get(epomeno).equals("Οƒ")) {
 								for (a = 0; a < sigma.length; a++) {
 									test = test.delete(i, epomeno + 1);
 									test = test.insert(i, sigma[a]);
@@ -208,8 +209,8 @@ public class lathosstofonien {
 									periptosis.add(test.toString());
 								}
 							}
-						} else if (pinakas.get(i).equals("τ")) {
-							if (pinakas.get(epomeno).equals("τ")) {
+						} else if (pinakas.get(i).equals("Ο„")) {
+							if (pinakas.get(epomeno).equals("Ο„")) {
 								for (a = 0; a < taf.length; a++) {
 									test = test.delete(i, epomeno + 1);
 									test = test.insert(i, taf[a]);
@@ -218,42 +219,42 @@ public class lathosstofonien {
 								}
 							}
 						} else if (pinakas.containsKey(i) ) {
-							if (pinakas.get(i).equals("ι") || pinakas.get(i).equals("η") || pinakas.get(i).equals("υ")) {
+							if (pinakas.get(i).equals("ΞΉ") || pinakas.get(i).equals("Ξ·") || pinakas.get(i).equals("Ο…")) {
 								for(a = 0; a < yota.length; a++) { 
 									test = test.delete(i,i + 1);
 									test = test.insert(i,yota[a]);
 									sindiasmoi.add(test);
 									periptosis.add(test.toString());
 								}
-							} else if (pinakas.get(i).equals("ο") || pinakas.get(i).equals("ω")) {
+							} else if (pinakas.get(i).equals("ΞΏ") || pinakas.get(i).equals("Ο‰")) {
 								for(a = 0; a < omikron.length; a++) { 
 									test = test.delete(i,i + 1);
 									test = test.insert(i,omikron[a]);
 									sindiasmoi.add(test);
 									periptosis.add(test.toString());
 								}
-							} else if (pinakas.get(i).equals("ε")) {
+							} else if (pinakas.get(i).equals("Ξµ")) {
 								for(a = 0; a < epsilon.length; a++) { 
 									test = test.delete(i,i + 1);
 									test = test.insert(i,epsilon[a]);
 									sindiasmoi.add(test);
 									periptosis.add(test.toString());
 								}
-							} else if (pinakas.get(i).equals("β")) {
+							} else if (pinakas.get(i).equals("Ξ²")) {
 								for(a = 0; a < beta.length; a++) { 
 									test = test.delete(i,i + 1);
 									test = test.insert(i,beta[a]);
 									sindiasmoi.add(test);
 									periptosis.add(test.toString());
 								}
-							} else if (pinakas.get(i).equals("κ")) {
+							} else if (pinakas.get(i).equals("ΞΊ")) {
 								for(a = 0; a < kapa.length; a++) { 
 									test = test.delete(i,i + 1);
 									test = test.insert(i,kapa[a]);
 									sindiasmoi.add(test);
 									periptosis.add(test.toString());
 								}
-							} else if (pinakas.get(i).equals("λ")) {
+							} else if (pinakas.get(i).equals("Ξ»")) {
 								for(a = 0; a < lamda.length; a++) { 
 									test = test.delete(i,i + 1);
 									test = test.insert(i,lamda[a]);
@@ -261,42 +262,42 @@ public class lathosstofonien {
 									periptosis.add(test.toString());
 								}
 					
-							} else if (pinakas.get(i).equals("μ")) {
+							} else if (pinakas.get(i).equals("ΞΌ")) {
 								for(a = 0; a < mi.length; a++) { 
 									test = test.delete(i,i + 1);
 									test = test.insert(i,mi[a]);
 									sindiasmoi.add(test);
 									periptosis.add(test.toString());
 								}
-							} else if (pinakas.get(i).equals("ν") && !pinakas.get(epomeno).equals("τ")) {
+							} else if (pinakas.get(i).equals("Ξ½") && !pinakas.get(epomeno).equals("Ο„")) {
 								for(a = 0; a < ni.length; a++) { 
 									test = test.delete(i,i + 1);
 									test = test.insert(i,ni[a]);
 									sindiasmoi.add(test);
 									periptosis.add(test.toString());
 								}
-							} else if (pinakas.get(i).equals("π")) {
+							} else if (pinakas.get(i).equals("Ο€")) {
 								for(a = 0; a < pi.length; a++) { 
 									test = test.delete(i,i + 1);
 									test = test.insert(i,pi[a]);
 									sindiasmoi.add(test);
 									periptosis.add(test.toString());
 								}
-							} else if (pinakas.get(i).equals("ρ")) {
+							} else if (pinakas.get(i).equals("Ο")) {
 								for(a = 0; a < ro.length; a++) { 
 									test = test.delete(i,i + 1);
 									test = test.insert(i,ro[a]);
 									sindiasmoi.add(test);
 									periptosis.add(test.toString());
 								}
-							} else if (pinakas.get(i).equals("σ")) {
+							} else if (pinakas.get(i).equals("Οƒ")) {
 								for(a = 0; a < sigma.length; a++) { 
 									test = test.delete(i,i + 1);
 									test = test.insert(i,sigma[a]);
 									sindiasmoi.add(test);
 									periptosis.add(test.toString());
 								}
-							} else if (pinakas.get(i).equals("τ") && !pinakas.get(epomeno).equals("ζ")) {
+							} else if (pinakas.get(i).equals("Ο„") && !pinakas.get(epomeno).equals("Ξ¶")) {
 								for(a = 0; a < taf.length; a++) { 
 									test = test.delete(i,i + 1);
 									test = test.insert(i,taf[a]);
@@ -309,6 +310,6 @@ public class lathosstofonien {
 				}
 			}
 		}
-		endexomenes.addAll(periptosis); /*ο πινακας με ολες τις ενδεχομενες λεξεις*/
+		endexomenes.addAll(periptosis); /*ΞΏ Ο€ΞΉΞ½Ξ±ΞΊΞ±Ο‚ ΞΌΞµ ΞΏΞ»ΞµΟ‚ Ο„ΞΉΟ‚ ΞµΞ½Ξ΄ΞµΟ‡ΞΏΞΌΞµΞ½ΞµΟ‚ Ξ»ΞµΞΎΞµΞΉΟ‚*/
 	}
 }
