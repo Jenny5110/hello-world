@@ -1,14 +1,14 @@
-/*Δημιουργεί και επιστρέφει ενα πίνακα με τα φωνηεντα και τα συμφωνα και τις θεσεις τους*/
+/*Ξ”Ξ·ΞΌΞΉΞΏΟ…ΟΞ³ΞµΞ― ΞΊΞ±ΞΉ ΞµΟ€ΞΉΟƒΟ„ΟΞ­Ο†ΞµΞΉ ΞµΞ½Ξ± Ο€Ξ―Ξ½Ξ±ΞΊΞ± ΞΌΞµ Ο„Ξ± Ο†Ο‰Ξ½Ξ·ΞµΞ½Ο„Ξ± ΞΊΞ±ΞΉ Ο„Ξ± ΟƒΟ…ΞΌΟ†Ο‰Ξ½Ξ± ΞΊΞ±ΞΉ Ο„ΞΉΟ‚ ΞΈΞµΟƒΞµΞΉΟ‚ Ο„ΞΏΟ…Ο‚*/
 import java.util.*;
 import java.util.HashMap;
 
 public class pinakassimfon {
-	protected static String [] fonien = {"α", "ε", "η", "ι", "ο", "υ", "ω"};
-	protected static String [] simfono = { "β", "κ", "λ", "μ", "ν", "π", "ρ", "σ", "τ"};
+	protected static String [] fonien = {"Ξ±", "Ξµ", "Ξ·", "ΞΉ", "ΞΏ", "Ο…", "Ο‰"};
+	protected static String [] simfono = { "Ξ²", "ΞΊ", "Ξ»", "ΞΌ", "Ξ½", "Ο€", "Ο", "Οƒ", "Ο„"};
 	
 	public static HashMap<Integer, String> tableMaker(StringBuffer word) {
 		int count;
-		HashMap<Integer, String> fosi = new HashMap<Integer, String>();/*πίνακας που περιέχει τα συμφωνα και τα φωνηεντα μιας λέξης που δίνεται με τις θέσεις τους στη λέξη*/
+		HashMap<Integer, String> fosi = new HashMap<Integer, String>();/*Ο€Ξ―Ξ½Ξ±ΞΊΞ±Ο‚ Ο€ΞΏΟ… Ο€ΞµΟΞΉΞ­Ο‡ΞµΞΉ Ο„Ξ± ΟƒΟ…ΞΌΟ†Ο‰Ξ½Ξ± ΞΊΞ±ΞΉ Ο„Ξ± Ο†Ο‰Ξ½Ξ·ΞµΞ½Ο„Ξ± ΞΌΞΉΞ±Ο‚ Ξ»Ξ­ΞΎΞ·Ο‚ Ο€ΞΏΟ… Ξ΄Ξ―Ξ½ΞµΟ„Ξ±ΞΉ ΞΌΞµ Ο„ΞΉΟ‚ ΞΈΞ­ΟƒΞµΞΉΟ‚ Ο„ΞΏΟ…Ο‚ ΟƒΟ„Ξ· Ξ»Ξ­ΞΎΞ·*/
 		for (int i = 0; i < word.length(); i++) {
 			
 			for (int h = 0; h < fonien.length; h++) {
