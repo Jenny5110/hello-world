@@ -2,11 +2,11 @@ import java.util.List;
 import java.util.TreeMap;
 import java.util.Scanner;
 
-/*Δέχεται ένα κείμενο και ελέγχει αν κάθε λέξη περιέχεται στο λεξικό. Αν περιέχεται στο λεξικό είναι σωστή αν όχι είναι λάθος*/
+/*Ξ”Ξ­Ο‡ΞµΟ„Ξ±ΞΉ Ξ­Ξ½Ξ± ΞΊΞµΞ―ΞΌΞµΞ½ΞΏ ΞΊΞ±ΞΉ ΞµΞ»Ξ­Ξ³Ο‡ΞµΞΉ Ξ±Ξ½ ΞΊΞ¬ΞΈΞµ Ξ»Ξ­ΞΎΞ· Ο€ΞµΟΞΉΞ­Ο‡ΞµΟ„Ξ±ΞΉ ΟƒΟ„ΞΏ Ξ»ΞµΞΎΞΉΞΊΟ. Ξ‘Ξ½ Ο€ΞµΟΞΉΞ­Ο‡ΞµΟ„Ξ±ΞΉ ΟƒΟ„ΞΏ Ξ»ΞµΞΎΞΉΞΊΟ ΞµΞ―Ξ½Ξ±ΞΉ ΟƒΟ‰ΟƒΟ„Ξ® Ξ±Ξ½ ΟΟ‡ΞΉ ΞµΞ―Ξ½Ξ±ΞΉ Ξ»Ξ¬ΞΈΞΏΟ‚*/
 public class BasicCode {
 	public static void main (String [] args){
-		System.out.println("Καλώς ήρθατε στον Ορογραφικό Έλεγχο");
-		System.out.println("Γράψε το κείμενο");
+		System.out.println("ΞΞ±Ξ»ΟΟ‚ Ξ®ΟΞΈΞ±Ο„Ξµ ΟƒΟ„ΞΏΞ½ ΞΟΞΈΞΏΞ³ΟΞ±Ο†ΞΉΞΊΟ ΞΞ»ΞµΞ³Ο‡ΞΏ");
+		System.out.println("Ξ“ΟΞ¬ΟΞµ Ο„ΞΏ ΞΊΞµΞ―ΞΌΞµΞ½ΞΏ");
 		Scanner input = new Scanner(System.in);
 		String text = input.nextLine();
 		input.close();
@@ -17,9 +17,9 @@ public class BasicCode {
 			word = wordsList.get(i);
 			System.out.println();
 			if (Dictionary.containsKey(word) == true){
-				System.out.printf("Η λέξη %s είναι σωστή ",word);
+				System.out.printf("Ξ— Ξ»Ξ­ΞΎΞ· %s ΞµΞ―Ξ½Ξ±ΞΉ ΟƒΟ‰ΟƒΟ„Ξ® ",word);
 			} else {
-				System.out.printf("Η λέξη %s είναι λάθος  ",word);
+				System.out.printf("Ξ— Ξ»Ξ­ΞΎΞ· %s ΞµΞ―Ξ½Ξ±ΞΉ Ξ»Ξ¬ΞΈΞΏΟ‚ ",word);
 			}
 		}
 		
