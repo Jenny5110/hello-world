@@ -1,8 +1,8 @@
-/*Κατασκευαστης μέσα έχει την λέξη και το πίνακα της λέξης*/
-/*Χρειάζεται για το lathosstofonien*/
+/*ΞΞ±Ο„Ξ±ΟƒΞΊΞµΟ…Ξ±ΟƒΟ„Ξ·Ο‚ ΞΌΞ­ΟƒΞ± Ξ­Ο‡ΞµΞΉ Ο„Ξ·Ξ½ Ξ»Ξ­ΞΎΞ· ΞΊΞ±ΞΉ Ο„ΞΏ Ο€Ξ―Ξ½Ξ±ΞΊΞ± Ο„Ξ·Ο‚ Ξ»Ξ­ΞΎΞ·Ο‚*/
+/*Ξ§ΟΞµΞΉΞ¬Ξ¶ΞµΟ„Ξ±ΞΉ Ξ³ΞΉΞ± Ο„ΞΏ lathosstofonien*/
 public class lexpin {
-	private String word; /*Η λέξη */ 
-	private String [] warr; /* Ο πίνακας που έχει τη λέξη */
+	private String word; /*Ξ— Ξ»Ξ­ΞΎΞ·*/
+	private String [] warr; /*Ξ Ο€Ξ―Ξ½Ξ±ΞΊΞ±Ο‚ Ο€ΞΏΟ… Ξ­Ο‡ΞµΞΉ Ο„Ξ·Ξ½ Ξ»Ξ­ΞΎΞ·*/
  
 	public lexpin (String word, String [] warr) {
 		this.word = word;
