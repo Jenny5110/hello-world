@@ -11,27 +11,27 @@ public class lathosstofonien {
 		int dialitika = lex.getDialitika();
 		int tonos = lex.getTonos();
 		int dialitikatonos = lex.getDialtonos(); 
-		HashSet <String> periptosis = new HashSet<String>() ;/* θα χρειαστει για μετα μοναδικοτητα λεξεων*/
-		int a, i, j; /*Ο μετρητης για τις  for */ 
-		ArrayList <lexpin> sindiasmoi = new ArrayList (); /*οι συνδυασμοι των λεξεων (θα υπάρχουν και διπλοτυπα)*/
-		ArrayList <String> endexomenes = new ArrayList();/*Οι συνδυασμόι των λέξεων σε Στρινγκ με μοναδικότητα*/
+		HashSet <String> periptosis = new HashSet<String>() ;/* ΞΈΞ± Ο‡ΟΞµΞΉΞ±ΟƒΟ„ΞµΞΉ Ξ³ΞΉΞ± ΞΌΞµΟ„Ξ± ΞΌΞΏΞ½Ξ±Ξ΄ΞΉΞΊΞΏΟ„Ξ·Ο„Ξ± Ξ»ΞµΞΎΞµΟ‰Ξ½*/
+		int a, i, j; /*Ξ ΞΌΞµΟ„ΟΞ·Ο„Ξ·Ο‚ Ξ³ΞΉΞ± Ο„ΞΉΟ‚  for */ 
+		ArrayList <lexpin> sindiasmoi = new ArrayList (); /*ΞΏΞΉ ΟƒΟ…Ξ½Ξ΄Ο…Ξ±ΟƒΞΌΞΏΞΉ Ο„Ο‰Ξ½ Ξ»ΞµΞΎΞµΟ‰Ξ½ (ΞΈΞ± Ο…Ο€Ξ¬ΟΟ‡ΞΏΟ…Ξ½ ΞΊΞ±ΞΉ Ξ΄ΞΉΟ€Ξ»ΞΏΟ„Ο…Ο€Ξ±)*/
+		ArrayList <String> endexomenes = new ArrayList();/*ΞΞΉ ΟƒΟ…Ξ½Ξ΄Ο…Ξ±ΟƒΞΌΟΞΉ Ο„Ο‰Ξ½ Ξ»Ξ­ΞΎΞµΟ‰Ξ½ ΟƒΞµ Ξ£Ο„ΟΞΉΞ½Ξ³ΞΊ ΞΌΞµ ΞΌΞΏΞ½Ξ±Ξ΄ΞΉΞΊΟΟ„Ξ·Ο„Ξ±*/
 		String w = lex.getRaw().toString();
-		String pinword [] = lextoarr.sepin(w, tonos, dialitika, dialitikatonos );/* ο πινακας που είναι μέσα η λέξη*/
+		String pinword [] = lextoarr.sepin(w, tonos, dialitika, dialitikatonos );/* ΞΏ Ο€ΞΉΞ½Ξ±ΞΊΞ±Ο‚ Ο€ΞΏΟ… ΞµΞ―Ξ½Ξ±ΞΉ ΞΌΞ­ΟƒΞ± Ξ· Ξ»Ξ­ΞΎΞ·*/
 		sindiasmoi.add(new lexpin(w, pinword));
-		String [] pinakas; /*Θα αποθηκεύεται προσωρίνα ο πίνακας της λέξης που εξετάζεται*/
+		String [] pinakas; /*ΞΞ± Ξ±Ο€ΞΏΞΈΞ·ΞΊΞµΟΞµΟ„Ξ±ΞΉ Ο€ΟΞΏΟƒΟ‰ΟΞ―Ξ½Ξ± ΞΏ Ο€Ξ―Ξ½Ξ±ΞΊΞ±Ο‚ Ο„Ξ·Ο‚ Ξ»Ξ­ΞΎΞ·Ο‚ Ο€ΞΏΟ… ΞµΞΎΞµΟ„Ξ¬Ξ¶ΞµΟ„Ξ±ΞΉ*/
 		int mikoslex = pinword.length;
-		StringBuilder wbuilder;/*Χρειάζεται για μετατροπή από πίνακα σε String*/
-		String wstr;/*το String που προκύπτει μετά απο το Build*/
-		lexpin mpal; /*Αυτό που θα μπαίνει στη λίστα*/
-		String [] p;/*προσωρινή αποθήκευση*/
+		StringBuilder wbuilder;/*Ξ§ΟΞµΞΉΞ¬Ξ¶ΞµΟ„Ξ±ΞΉ Ξ³ΞΉΞ± ΞΌΞµΟ„Ξ±Ο„ΟΞΏΟ€Ξ® Ξ±Ο€Ο Ο€Ξ―Ξ½Ξ±ΞΊΞ± ΟƒΞµ String*/
+		String wstr;/*Ο„ΞΏ String Ο€ΞΏΟ… Ο€ΟΞΏΞΊΟΟ€Ο„ΞµΞΉ ΞΌΞµΟ„Ξ¬ Ξ±Ο€ΞΏ Ο„ΞΏ Build*/
+		lexpin mpal; /*Ξ‘Ο…Ο„Ο Ο€ΞΏΟ… ΞΈΞ± ΞΌΟ€Ξ±Ξ―Ξ½ΞµΞΉ ΟƒΟ„Ξ· Ξ»Ξ―ΟƒΟ„Ξ±*/
+		String [] p;/*Ο€ΟΞΏΟƒΟ‰ΟΞΉΞ½Ξ® Ξ±Ο€ΞΏΞΈΞ®ΞΊΞµΟ…ΟƒΞ·*/
 		
 		for (i = 0; i < mikoslex; i++) {
 			int mikoslist = sindiasmoi.size();
 			for (j = 0; j < mikoslist; j++) {
 				pinakas = sindiasmoi.get(j).getWarr();
 				/*Yotas*/
-				if (pinakas [i].equals("ι") || pinakas [i].equals("η") || pinakas [i].equals("οι") || pinakas [i].equals("ει") || pinakas [i].equals("υ") ) {
-					pinakas[i] = "ι";
+				if (pinakas [i].equals("ΞΉ") || pinakas [i].equals("Ξ·") || pinakas [i].equals("ΞΏΞΉ") || pinakas [i].equals("ΞµΞΉ") || pinakas [i].equals("Ο…") ) {
+					pinakas[i] = "ΞΉ";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -41,7 +41,7 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 			    	
-			    	pinakas [i] = "η";
+			    	pinakas [i] = "Ξ·";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -51,7 +51,7 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 			    	
-			    	pinakas[i] = "οι";
+			    	pinakas[i] = "ΞΏΞΉ";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -61,7 +61,7 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 			    	
-			    	pinakas [i] = "ει";
+			    	pinakas [i] = "ΞµΞΉ";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -71,7 +71,7 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 			    	
-			    	pinakas[i] = "υ";
+			    	pinakas[i] = "Ο…";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -82,8 +82,8 @@ public class lathosstofonien {
 			    	
 			    	sindiasmoi.add(mpal);
 				/*omikron*/
-				} else if (pinakas [i].equals("ο") || pinakas [i].equals("ω")) {
-					pinakas[i] = "ο";
+				} else if (pinakas [i].equals("ΞΏ") || pinakas [i].equals("Ο‰")) {
+					pinakas[i] = "ΞΏ";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -93,7 +93,7 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 			    	
-			    	pinakas [i] = "ω";
+			    	pinakas [i] = "Ο‰";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -103,8 +103,8 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 				/*epsilon*/
-				} else if (pinakas [i].equals("ε") || pinakas [i].equals("αι")) {
-					pinakas[i] = "ε";
+				} else if (pinakas [i].equals("Ξµ") || pinakas [i].equals("Ξ±ΞΉ")) {
+					pinakas[i] = "Ξµ";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -114,7 +114,7 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 			    	
-			    	pinakas [i] = "αι";
+			    	pinakas [i] = "Ξ±ΞΉ";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -124,8 +124,8 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 				/*eu*/
-				} else if (pinakas [i].equals("ευ") || pinakas [i].equals("εφ") || pinakas[i].equals("εβ")) {
-			    	pinakas [i] = "ευ";
+				} else if (pinakas [i].equals("ΞµΟ…") || pinakas [i].equals("ΞµΟ†") || pinakas[i].equals("ΞµΞ²")) {
+			    	pinakas [i] = "ΞµΟ…";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -135,7 +135,7 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 			    	
-			    	pinakas [i] = "εφ";
+			    	pinakas [i] = "ΞµΟ†";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -145,7 +145,7 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 			    	
-			    	pinakas [i] = "εβ";
+			    	pinakas [i] = "ΞµΞ²";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -155,8 +155,8 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 				/*au*/
-				} else if (pinakas [i].equals("αυ") || pinakas [i].equals("αφ") || pinakas[i].equals("αβ") ) {
-			    	pinakas [i] = "αυ";
+				} else if (pinakas [i].equals("Ξ±Ο…") || pinakas [i].equals("Ξ±Ο†") || pinakas[i].equals("Ξ±Ξ²") ) {
+			    	pinakas [i] = "Ξ±Ο…";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -166,7 +166,7 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 			    	
-			    	pinakas [i] = "αφ";
+			    	pinakas [i] = "Ξ±Ο†";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -176,7 +176,7 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 			    	
-			    	pinakas [i] = "αβ";
+			    	pinakas [i] = "Ξ±Ξ²";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -186,8 +186,8 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 				/*gk*/
-				} else if (pinakas [i].equals("γκ") || pinakas [i].equals("γγ")) {
-			    	pinakas [i] = "γκ";
+				} else if (pinakas [i].equals("Ξ³ΞΊ") || pinakas [i].equals("Ξ³Ξ³")) {
+			    	pinakas [i] = "Ξ³ΞΊ";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -197,7 +197,7 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 			    	
-			    	pinakas [i] = "γγ";
+			    	pinakas [i] = "Ξ³Ξ³";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -207,8 +207,8 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 				/*tz*/
-				} else if (pinakas [i].equals("τζ") || pinakas [i].equals("ντζ")) {
-			    	pinakas [i] = "τζ";
+				} else if (pinakas [i].equals("Ο„Ξ¶") || pinakas [i].equals("Ξ½Ο„Ξ¶")) {
+			    	pinakas [i] = "Ο„Ξ¶";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -218,7 +218,7 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 			    	
-			    	pinakas [i] = "ντζ";
+			    	pinakas [i] = "Ξ½Ο„Ξ¶";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -228,8 +228,8 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 				/*beta*/
-				} else if (pinakas [i].equals("β") || pinakas [i].equals("ββ")) {
-			    	pinakas [i] = "β";
+				} else if (pinakas [i].equals("Ξ²") || pinakas [i].equals("Ξ²Ξ²")) {
+			    	pinakas [i] = "Ξ²";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -239,7 +239,7 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 			    	
-			    	pinakas [i] = "ββ";
+			    	pinakas [i] = "Ξ²Ξ²";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -249,8 +249,8 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 				/*kapa*/
-				} else if (pinakas [i].equals("κ") || pinakas [i].equals("κκ")) {
-			    	pinakas [i] = "κ";
+				} else if (pinakas [i].equals("ΞΊ") || pinakas [i].equals("ΞΊΞΊ")) {
+			    	pinakas [i] = "ΞΊ";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -260,7 +260,7 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 			    	
-			    	pinakas [i] = "κκ";
+			    	pinakas [i] = "ΞΊΞΊ";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -270,8 +270,8 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 				/*lamda*/
-				} else if (pinakas [i].equals("λ") || pinakas [i].equals("λλ")) {
-			    	pinakas [i] = "λ";
+				} else if (pinakas [i].equals("Ξ»") || pinakas [i].equals("Ξ»Ξ»")) {
+			    	pinakas [i] = "Ξ»";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -281,7 +281,7 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 			    	
-			    	pinakas [i] = "λλ";
+			    	pinakas [i] = "Ξ»Ξ»";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -291,8 +291,8 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 			    /*mi*/	
-				} else if (pinakas [i].equals("μ") || pinakas [i].equals("μμ")) {
-			    	pinakas [i] = "μ";
+				} else if (pinakas [i].equals("ΞΌ") || pinakas [i].equals("ΞΌΞΌ")) {
+			    	pinakas [i] = "ΞΌ";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -302,7 +302,7 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 			    	
-			    	pinakas [i] = "μμ";
+			    	pinakas [i] = "ΞΌΞΌ";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -312,8 +312,8 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 			    /*ni*/
-				} else if (pinakas [i].equals("ν") || pinakas [i].equals("νν")) {
-			    	pinakas [i] = "ν";
+				} else if (pinakas [i].equals("Ξ½") || pinakas [i].equals("Ξ½Ξ½")) {
+			    	pinakas [i] = "Ξ½";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -323,7 +323,7 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 			    	
-			    	pinakas [i] = "νν";
+			    	pinakas [i] = "Ξ½Ξ½";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -333,8 +333,8 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 				/*pi*/
-				} else if (pinakas [i].equals("π") || pinakas [i].equals("ππ")) {
-			    	pinakas [i] = "π";
+				} else if (pinakas [i].equals("Ο€") || pinakas [i].equals("Ο€Ο€")) {
+			    	pinakas [i] = "Ο€";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -344,7 +344,7 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 			    	
-			    	pinakas [i] = "ππ";
+			    	pinakas [i] = "Ο€Ο€";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -354,8 +354,8 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 				/*ro*/
-				} else if (pinakas [i].equals("ρ") || pinakas [i].equals("ρρ")) {
-			    	pinakas [i] = "ρ";
+				} else if (pinakas [i].equals("Ο") || pinakas [i].equals("ΟΟ")) {
+			    	pinakas [i] = "Ο";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -365,7 +365,7 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 			    	
-			    	pinakas [i] = "ρρ";
+			    	pinakas [i] = "ΟΟ";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -375,8 +375,8 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 				/*sigma*/
-				} else if (pinakas [i].equals("σ") || pinakas [i].equals("σσ")) {
-			    	pinakas [i] = "σ";
+				} else if (pinakas [i].equals("Οƒ") || pinakas [i].equals("ΟƒΟƒ")) {
+			    	pinakas [i] = "Οƒ";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -386,7 +386,7 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 			    	
-			    	pinakas [i] = "σσ";
+			    	pinakas [i] = "ΟƒΟƒ";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -396,8 +396,8 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 				/*taf*/
-				} else if (pinakas [i].equals("τ") || pinakas [i].equals("ττ")) {
-			    	pinakas [i] = "τ";
+				} else if (pinakas [i].equals("Ο„") || pinakas [i].equals("Ο„Ο„")) {
+			    	pinakas [i] = "Ο„";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -407,7 +407,7 @@ public class lathosstofonien {
 			    	mpal = new lexpin(wstr, p);
 			    	sindiasmoi.add(mpal);
 			    	
-			    	pinakas [i] = "ττ";
+			    	pinakas [i] = "Ο„Ο„";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
 			    	for (String s : pinakas) {
@@ -420,9 +420,9 @@ public class lathosstofonien {
 			}
 		}
 		for (j = 0; j < sindiasmoi.size(); j++) {
-			periptosis.add(sindiasmoi.get(j).getWord());/*Παιρνει τις λέξεις και εξαφανίζει τα διπλότυπα*/
+			periptosis.add(sindiasmoi.get(j).getWord());/*Ξ Ξ±ΞΉΟΞ½ΞµΞΉ Ο„ΞΉΟ‚ Ξ»Ξ­ΞΎΞµΞΉΟ‚ ΞΊΞ±ΞΉ ΞµΞΎΞ±Ο†Ξ±Ξ½Ξ―Ξ¶ΞµΞΉ Ο„Ξ± Ξ΄ΞΉΟ€Ξ»ΟΟ„Ο…Ο€Ξ±*/
 		}
-		endexomenes.addAll(periptosis); /*ο πινακας με ολες τις ενδεχομενες λεξεις*/
+		endexomenes.addAll(periptosis); /*ΞΏ Ο€ΞΉΞ½Ξ±ΞΊΞ±Ο‚ ΞΌΞµ ΞΏΞ»ΞµΟ‚ Ο„ΞΉΟ‚ ΞµΞ½Ξ΄ΞµΟ‡ΞΏΞΌΞµΞ½ΞµΟ‚ Ξ»ΞµΞΎΞµΞΉΟ‚*/
 		return endexomenes;
 	}
 }
