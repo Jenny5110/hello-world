@@ -1,137 +1,137 @@
-/*βάζει σε πινακα μια λέξη (τα διθφογγα τα βάζει σε μια θέση του πίνακα)*/
-/*Παιρνει μια λέξη (raw) και τις θέσεις του τόνου, των διαλυτικών και των διαλυτικών με τόνο*/
+/*Ξ²Ξ¬Ξ¶ΞµΞΉ ΟƒΞµ Ο€ΞΉΞ½Ξ±ΞΊΞ± ΞΌΞΉΞ± Ξ»Ξ­ΞΎΞ· (Ο„Ξ± Ξ΄ΞΉΞΈΟ†ΞΏΞ³Ξ³Ξ± Ο„Ξ± Ξ²Ξ¬Ξ¶ΞµΞΉ ΟƒΞµ ΞΌΞΉΞ± ΞΈΞ­ΟƒΞ· Ο„ΞΏΟ… Ο€Ξ―Ξ½Ξ±ΞΊΞ±)*/
+/*Ξ Ξ±ΞΉΟΞ½ΞµΞΉ ΞΌΞΉΞ± Ξ»Ξ­ΞΎΞ· (raw) ΞΊΞ±ΞΉ Ο„ΞΉΟ‚ ΞΈΞ­ΟƒΞµΞΉΟ‚ Ο„ΞΏΟ… Ο„ΟΞ½ΞΏΟ…, Ο„Ο‰Ξ½ Ξ΄ΞΉΞ±Ξ»Ο…Ο„ΞΉΞΊΟΞ½ ΞΊΞ±ΞΉ Ο„Ο‰Ξ½ Ξ΄ΞΉΞ±Ξ»Ο…Ο„ΞΉΞΊΟΞ½ ΞΌΞµ Ο„ΟΞ½ΞΏ*/
 import java.util.ArrayList;
 public class lextoarr {
 	public static String [] sepin (String word, int ton, int dial, int dialton) {
-		ArrayList<String> w1 = new ArrayList<String>(); /* Η λέξη σε λίστα*/
+		ArrayList<String> w1 = new ArrayList<String>(); /* Ξ— Ξ»Ξ­ΞΎΞ· ΟƒΞµ Ξ»Ξ―ΟƒΟ„Ξ±*/
 		int i = 0;
 		int epomeno = 0;
 		try {
 			while (i < word.length()) {
-				if (word.charAt(i) == 'β' && word.charAt(i + 1) == 'β') {
-					w1.add("ββ");
+				if (word.charAt(i) == 'Ξ²' && word.charAt(i + 1) == 'Ξ²') {
+					w1.add("Ξ²Ξ²");
 					i ++;
-				} else if (word.charAt(i) == 'κ' ) {
-					if (word.charAt(i+1) == 'κ') {
-						w1.add("κκ");
+				} else if (word.charAt(i) == 'ΞΊ' ) {
+					if (word.charAt(i + 1) == 'ΞΊ') {
+						w1.add("ΞΊΞΊ");
 						i ++;
-					} else if (word.charAt(i + 1) == 'τ') {
-						w1.add("κτ");
+					} else if (word.charAt(i + 1) == 'Ο„') {
+						w1.add("ΞΊΟ„");
 						i++;
 					} else {
-						w1.add("π");
+						w1.add("ΞΊ");
 					}
-				} else if (word.charAt(i) == 'λ' && word.charAt(i + 1) == 'λ') {
-					w1.add("λλ");
+				} else if (word.charAt(i) == 'Ξ»' && word.charAt(i + 1) == 'Ξ»') {
+					w1.add("Ξ»Ξ»");
 					i ++;
-				} else if (word.charAt(i) == 'μ') {
-					if (word.charAt(i + 1) == 'μ') {
-						w1.add("μμ");
+				} else if (word.charAt(i) == 'ΞΌ') {
+					if (word.charAt(i + 1) == 'ΞΌ') {
+						w1.add("ΞΌΞΌ");
 						i ++;
-					} else if (word.charAt(i + 1) == 'π') {
-						w1.add("μπ");
+					} else if (word.charAt(i + 1) == 'Ο€') {
+						w1.add("ΞΌΟ€");
 						i ++;
 					} else {
-						w1.add("μ");
+						w1.add("ΞΌ");
 					}
-				} else if (word.charAt(i) == 'ν' ) {
-					if (word.charAt(i + 1) == 'ν') {
-						w1.add("νν");
+				} else if (word.charAt(i) == 'Ξ½' ) {
+					if (word.charAt(i + 1) == 'Ξ½') {
+						w1.add("Ξ½Ξ½");
 						i ++;
-					} else if (word.charAt(i + 1) == 'τ') {
-						if (word.charAt(i + 2) == 'ζ') {
-							w1.add("ντζ");
+					} else if (word.charAt(i + 1) == 'Ο„') {
+						if (word.charAt(i + 2) == 'Ξ¶') {
+							w1.add("Ξ½Ο„Ξ¶");
 							i ++;
 						} else {
-							w1.add("ντ");
+							w1.add("Ξ½Ο„");
 							i ++;
 						}
 					} else {
-						w1.add("ν");
+						w1.add("Ξ½");
 					}
-				} else if (word.charAt(i) == 'π') {
-					if (word.charAt(i+1) == 'π') {
-						w1.add("ππ");
+				} else if (word.charAt(i) == 'Ο€') {
+					if (word.charAt(i + 1) == 'Ο€') {
+						w1.add("Ο€Ο€");
 						i ++;
-					} else if (word.charAt(i + 1) == 'τ') {
-						w1.add("πτ");
+					} else if (word.charAt(i + 1) == 'Ο„') {
+						w1.add("Ο€Ο„");
 						i ++;
 					} else {
-						w1.add("π");
+						w1.add("Ο€");
 					}
-				} else if (word.charAt(i) == 'ρ' && word.charAt(i + 1) == 'ρ') {
-					w1.add("ρρ");
+				} else if (word.charAt(i) == 'Ο' && word.charAt(i + 1) == 'Ο') {
+					w1.add("ΟΟ");
 					i ++;
-				} else if (word.charAt(i) == 'σ') {
-					if (word.charAt(i + 1) == 'σ') {
-						w1.add("σσ");
+				} else if (word.charAt(i) == 'Οƒ') {
+					if (word.charAt(i + 1) == 'Οƒ') {
+						w1.add("ΟƒΟƒ");
 						i ++;
-					} else if (word.charAt(i + 1) == 'τ') {
-						w1.add("στ");
-						i ++;
-					} else {
-						w1.add("σ");
-					}
-				} else if (word.charAt(i) == 'τ' ) {
-					if (word.charAt(i + 1) == 'τ') {
-						w1.add("ττ");
-						i ++;
-					} else if (word.charAt(i + 1) == 'σ') {
-						w1.add("τσ");
-						i ++;
-					} else if (word.charAt(i + 1) == 'ζ') {
-						w1.add("τζ");
+					} else if (word.charAt(i + 1) == 'Ο„') {
+						w1.add("ΟƒΟ„");
 						i ++;
 					} else {
-						w1.add("τ");
+						w1.add("Οƒ");
 					}
-				} else if (word.charAt(i) == 'γ' && word.charAt(i + 1) == 'κ') {
-					w1.add("γκ");
+				} else if (word.charAt(i) == 'Ο„' ) {
+					if (word.charAt(i + 1) == 'Ο„') {
+						w1.add("Ο„Ο„");
+						i ++;
+					} else if (word.charAt(i + 1) == 'Οƒ') {
+						w1.add("Ο„Οƒ");
+						i ++;
+					} else if (word.charAt(i + 1) == 'Ξ¶') {
+						w1.add("Ο„Ξ¶");
+						i ++;
+					} else {
+						w1.add("Ο„");
+					}
+				} else if (word.charAt(i) == 'Ξ³' && word.charAt(i + 1) == 'ΞΊ') {
+					w1.add("Ξ³ΞΊ");
 					i ++;
-				} else if (word.charAt(i) == 'γ' && word.charAt(i + 1) == 'γ') {
-					w1.add("γγ");
+				} else if (word.charAt(i) == 'Ξ³' && word.charAt(i + 1) == 'Ξ³') {
+					w1.add("Ξ³Ξ³");
 					i ++;
-				} else if (word.charAt(i) == 'ο' && ton != i) {
-					if (word.charAt(i + 1) == 'ι' && !(dial == i + 1 || dialton == i + 1 )) {
-						w1.add("οι");
+				} else if (word.charAt(i) == 'ΞΏ' && ton != i) {
+					if (word.charAt(i + 1) == 'ΞΉ' && !(dial == i + 1 || dialton == i + 1 )) {
+						w1.add("ΞΏΞΉ");
 						i ++;
-					} else if (word.charAt(i + 1) == 'υ' && !( dial == i + 1 || dialton == i + 1)) {
-						w1.add("oυ");
+					} else if (word.charAt(i + 1) == 'Ο…' && !( dial == i + 1 || dialton == i + 1)) {
+						w1.add("oΟ…");
 						i ++;
 					} else {
-						w1.add("ο");
+						w1.add("ΞΏ");
 					}
-				} else if (word.charAt(i) == 'ε' && (ton != i)) {
-					if (word.charAt(i + 1) == 'ι' && !(dial == i + 1 || dialton == i + 1)) {
-						w1.add("ει");
+				} else if (word.charAt(i) == 'Ξµ' && (ton != i)) {
+					if (word.charAt(i + 1) == 'ΞΉ' && !(dial == i + 1 || dialton == i + 1)) {
+						w1.add("ΞµΞΉ");
 						i ++;
-					} else if ( word.charAt(i + 1) == 'υ' && !( dial == i + 1 || dialton == i + 1)) {
-						w1.add("ευ");
+					} else if ( word.charAt(i + 1) == 'Ο…' && !( dial == i + 1 || dialton == i + 1)) {
+						w1.add("ΞµΟ…");
 						i ++;
-					} else if (word.charAt(i + 1) == 'β') {
-						w1.add("εβ");
+					} else if (word.charAt(i + 1) == 'Ξ²') {
+						w1.add("ΞµΞ²");
 						i ++;
-					} else if (word.charAt(i + 1) == 'φ') {
-						w1.add("εφ");
+					} else if (word.charAt(i + 1) == 'Ο†') {
+						w1.add("ΞµΟ†");
 						i ++;
 					} else {
-						w1.add("ε");
+						w1.add("Ξµ");
 					}
-				} else if (word.charAt(i) == 'α' && (ton != i)) {
-					if (word.charAt(i + 1) == 'ι' && !(dial == i + 1 || dialton == i + 1)) {
-						w1.add("αι");
+				} else if (word.charAt(i) == 'Ξ±' && (ton != i)) {
+					if (word.charAt(i + 1) == 'ΞΉ' && !(dial == i + 1 || dialton == i + 1)) {
+						w1.add("Ξ±ΞΉ");
 						i ++;
-					} else if ( word.charAt(i + 1) == 'υ' && !( dial == i + 1 || dialton == i + 1)) {
-						w1.add("αυ");
+					} else if ( word.charAt(i + 1) == 'Ο…' && !( dial == i + 1 || dialton == i + 1)) {
+						w1.add("Ξ±Ο…");
 						i ++;
-					} else if (word.charAt(i + 1) == 'β') {
-						w1.add("αβ");
+					} else if (word.charAt(i + 1) == 'Ξ²') {
+						w1.add("Ξ±Ξ²");
 						i ++;
-					} else if (word.charAt(i + 1) == 'φ') {
-						w1.add("αφ");
+					} else if (word.charAt(i + 1) == 'Ο†') {
+						w1.add("Ξ±Ο†");
 						i ++;
 					} else {
-						w1.add("α");
+						w1.add("Ξ±");
 					}
 				} else {
 					w1.add(Character.toString(word.charAt(i)));
@@ -141,7 +141,7 @@ public class lextoarr {
 		}catch (Exception e){
 			w1.add(Character.toString(word.charAt(i)));
 		}
-		String [] w2 = new String[w1.size()];/*Η λίστα σε πίνακα (ο πίνακας βολεύει περισσότερο για να το μετατρέψουμε σε String*/
+		String [] w2 = new String[w1.size()];/*Ξ— Ξ»Ξ―ΟƒΟ„Ξ± ΟƒΞµ Ο€Ξ―Ξ½Ξ±ΞΊΞ± (ΞΏ Ο€Ξ―Ξ½Ξ±ΞΊΞ±Ο‚ Ξ²ΞΏΞ»ΞµΟΞµΞΉ Ο€ΞµΟΞΉΟƒΟƒΟΟ„ΞµΟΞΏ Ξ³ΞΉΞ± Ξ½Ξ± Ο„ΞΏ ΞΌΞµΟ„Ξ±Ο„ΟΞ­ΟΞΏΟ…ΞΌΞµ ΟƒΞµ String*/
 		for (int q = 0; q < w2.length; q++) {
 			w2[q] = w1.get(q);
 		}
