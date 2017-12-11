@@ -40,10 +40,11 @@ public class checkText{
 			}
 
 		}
-		/* Replacing two or more whitspaces with one whitespace */
-		String after = text.trim().replaceAll(" +", " ");
+		String next = text.replaceAll("[^a-zA-Zα-ωΑ-ω]", " ");
+		/* Replacing two or more whitespace with one whitespace */
+		String after = next.trim().replaceAll(" +", " ");
 
-		/* Creating the list 'words' and fiils it with every word on our text */
+		/* Creating the list 'words' and fills it with every word on our text */
 		ArrayList<String> wordsList = new ArrayList<String>();
 		for(String i : after.split(" ")) {
 				    wordsList.add(i);
