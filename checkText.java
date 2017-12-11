@@ -1,4 +1,4 @@
-import java.util.*;
+﻿import java.util.*;
 
 
 public class checkText{
@@ -40,7 +40,7 @@ public class checkText{
 			}
 
 		}
-		String next = text.replaceAll("[^a-zA-Zα-ωΑ-ω]", " ");
+		String next = text.replaceAll("[^a-zA-Zα-ωΑ-Ωά-ώΆ-Ώ]", " ");
 		/* Replacing two or more whitespace with one whitespace */
 		String after = next.trim().replaceAll(" +", " ");
 
