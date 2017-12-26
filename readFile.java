@@ -1,4 +1,3 @@
-package movies;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -18,7 +17,7 @@ public class readFile {
 	
 
 
-	public String readTextFile() throws FileNotFoundException, IOException {
+	public static String readTextFile() throws FileNotFoundException, IOException {
 			Scanner input = new Scanner(System.in);
 			System.out.println("Κάντε αντιγραφή και επικόλληση τη διεύθυνση του αρχείου text που θέλετε να περάσει απο ορθογραφικό έλεγχο.\n");
 			String url = input.nextLine();
