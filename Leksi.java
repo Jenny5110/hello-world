@@ -5,7 +5,7 @@ public class Leksi {
 	private int tonos;/*Βρίσκει τη θέση του τόνου*/
 	private int dialitika;/*Βρίσκει τη θέση των διαλυτικών*/
 	private int dialtonos;/*Βρίσκει τη θέση των διαλυτικών με τόνο*/
-        private StringBuffer raw;/*Δημιουργεί τη λέξη χωρις τόνους ή διαλυτικά με μικρά*/
+	private StringBuffer raw;/*Δημιουργεί τη λέξη χωρις τόνους ή διαλυτικά με μικρά*/
 	private StringBuilder lower;/*ότι κεφαλάιο βρει στη λέξη το κάνει μικρό*/
 
 	public Leksi(String lex) {
@@ -29,12 +29,10 @@ public class Leksi {
 			count = i;
 			a = lex.substring(count, count+1);
 			if (a.equals("α") || a.equals("ε") || a.equals("η") || a.equals("ι") || a.equals("υ") || a.equals("ο") ||
-					a.equals("ω") || a.equals("Α") || a.equals("Ε") || a.equals("Η") || a.equals("Ι") || a.equals("Υ") || 
-					a.equals("Ο") || a.equals("Ω")){
+					a.equals("ω")){
 				this.fonien ++;
 			} else if (a.equals("ά") || a.equals("έ") || a.equals("ή") || a.equals("ί") || a.equals("ύ") || a.equals("ό") ||
-					a.equals("ώ") || a.equals("Ά") || a.equals("Έ") || a.equals("Ή") || a.equals("Ί") || a.equals("Ύ") || 
-					a.equals("Ό") || a.equals("Ώ")){
+					a.equals("ώ")){
 				this.tonos = i;
 				if (a.equals("ά")){
 					this.raw.replace(i, i+1, "α");
@@ -58,6 +56,7 @@ public class Leksi {
 				} else {
 					this.raw.replace(i,  i+1, "υ");
 				}
+				
 			} else if (a.equals("ΐ") || a.equals("ΰ")) {
 				this.dialtonos = i;
 				if (a.equals("ΐ")){
@@ -71,6 +70,8 @@ public class Leksi {
 			
 		}
 	}
+	
+	
 	
 	public void setFonien(int fonien) {
 		this.fonien = fonien;
@@ -129,6 +130,7 @@ public class Leksi {
 	public StringBuffer getRaw() {
 		return this.raw;
 	}
+	
 	
 	public String toString(){
 		return "FONIEN " + this.fonien + " SIMFONO " + this.simfono + " TONOS "+ this.tonos + " DIALITIKA " + this.dialitika + " DIALTONOS " + this.dialtonos ;
