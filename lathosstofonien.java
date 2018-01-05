@@ -10,7 +10,7 @@ public class lathosstofonien {
 		int tonos = lex.getTonos();
 		int dialitikatonos = lex.getDialtonos(); 
 		HashSet <String> periptosis = new HashSet<String>() ;/* θα χρειαστει για μετα μοναδικοτητα λεξεων*/
-		int a, i, j; /*Ο μετρητης για τις  for */ 
+		int i, j; /*Ο μετρητης για τις  for */ 
 		ArrayList <lexpin> sindiasmoi = new ArrayList (); /*οι συνδυασμοι των λεξεων (θα υπάρχουν και διπλοτυπα)*/
 		ArrayList <String> endexomenes = new ArrayList();/*Οι συνδυασμόι των λέξεων σε Στρινγκ με μοναδικότητα*/
 		String w = lex.getRaw().toString();
