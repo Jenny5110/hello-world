@@ -40,6 +40,8 @@ public class DictionaryBuild {
 		
 		 try
 		 {
+			 String lex;
+			 Leksi word;
 			 String leksikey ;
 			 Leksi leksivalue;
 			 Dictionary = new TreeMap<String,String>();
