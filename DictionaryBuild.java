@@ -14,7 +14,7 @@ public class DictionaryBuild {
 
 	private static Scanner input;
 	
-	protected static TreeMap<String,Leksi> Dictionary;
+	protected static TreeMap<String,String> Dictionary;
 	
 	public static void openFile(){
 		try 
