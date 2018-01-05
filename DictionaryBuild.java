@@ -19,7 +19,7 @@ public class DictionaryBuild {
 	public static void openFile(){
 		try 
 		{
-			input = new Scanner(Paths.get("greek_dictionary.txt")); 
+			input = new Scanner(Paths.get("dictionary.txt")); 
 		}
 		catch (IOException ioException)
 		{
@@ -34,7 +34,7 @@ public class DictionaryBuild {
 			input.close();
 	}
 	
-	public static TreeMap<String,Leksi> readRecord(){
+	public static TreeMap<String,String> readRecord(){
 		openFile();
 		
 		
@@ -43,7 +43,7 @@ public class DictionaryBuild {
 			 String lex;
 			 Leksi word;
 			 String leksikey ;
-			 Leksi leksivalue;
+			 String leksivalue;
 			 Dictionary = new TreeMap<String,String>();
 			 while (input.hasNext())
 			 {
