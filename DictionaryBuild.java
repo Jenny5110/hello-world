@@ -45,9 +45,12 @@ public class DictionaryBuild {
 			 Dictionary = new TreeMap<String,String>();
 			 while (input.hasNext())
 			 {
-				 leksikey = input.next();
-				 leksivalue = new Leksi(leksikey);
+				 lex = input.next();
+				 word = new Leksi(lex);
+				 leksikey = word.getRaw().toString();
+				 leksivalue = lex;
 				 Dictionary.put(leksikey, leksivalue);
+				 
 				 }
 		 }
 		 catch (NoSuchElementException elementException)
