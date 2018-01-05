@@ -42,7 +42,7 @@ public class DictionaryBuild {
 		 {
 			 String leksikey ;
 			 Leksi leksivalue;
-			 Dictionary = new TreeMap<String,Leksi>();
+			 Dictionary = new TreeMap<String,String>();
 			 while (input.hasNext())
 			 {
 				 leksikey = input.next();
