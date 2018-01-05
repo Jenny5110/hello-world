@@ -1,14 +1,17 @@
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeMap;
 import java.util.Scanner;
 
 /*Δέχεται ένα κείμενο και ελέγχει αν κάθε λέξη περιέχεται στο λεξικό. Αν περιέχεται στο λεξικό είναι σωστή αν όχι είναι λάθος*/
 public class BasicCode {
-	public static void main (String [] args){
+	public static void main (String [] args) {
 		Scanner input = new Scanner(System.in);
 		Scanner sint = new Scanner(System.in);
 		String text = null ;
-		System.out.println("Καλώς ήρθατε στον Ορθογραφικό Έλεγχο");
+		System.out.println("Καλώς ήρθατε στον Ορογραφικό Έλεγχο");
 		System.out.println("Αν θέλετε να γράψετε κείμενο πατήστε 1 αλλιώς πατήστε 2 για να φορτώσετε ένα αρχείο");
 		int epilogi = sint.nextInt();
 		if (epilogi == 1) {
@@ -35,7 +38,11 @@ public class BasicCode {
 		/*Ως key λέξη raw και ως value η λέξη με τόνους κλπ*/
 		for (int i = 0; i < wordsList.size(); i++){
 			word = wordsList.get(i);
-			if (Dictionary.containsValue(word) == false) {
+			StringBuilder lower = new StringBuilder(word);
+			char b = lower.charAt(0);
+			lower.setCharAt(0, Character.toLowerCase(b));
+			String wordb = lower.toString();
+			if (Dictionary.containsValue(wordb) == false && Dictionary.containsValue(word) == false ) {
 				
 				System.out.printf("Στη λέξη %s εντοπίστηκε κάποιο λάθος \n", word);
 				/*Περιπτωση όλων κεφαλαίων*/
