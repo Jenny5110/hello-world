@@ -1,5 +1,10 @@
-﻿import java.util.*;
-
+import java.util.*;
+/**
+ * @return a list that contains all the words of a text
+ * 
+ * @author Thanos Pakoulieris
+ *
+ */
 
 public class checkText{
 	/* Total words */
