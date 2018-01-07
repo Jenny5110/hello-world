@@ -1,6 +1,12 @@
 /*βάζει σε πινακα μια λέξη (τα διθφογγα τα βάζει σε μια θέση του πίνακα)*/
 /*Παιρνει μια λέξη (raw) και τις θέσεις του τόνου, των διαλυτικών και των διαλυτικών με τόνο*/
 import java.util.ArrayList;
+/**
+ * Puts the word to an Array of String
+ * @author Panagiotis Skias
+ *
+ *@return String Array that contains the word
+ */
 public class lextoarr {
 	public static String [] sepin (String word, int ton, int dial, int dialton) {
 		ArrayList<String> w1 = new ArrayList<String>(); /* Η λέξη σε λίστα*/
