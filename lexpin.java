@@ -1,3 +1,9 @@
+/**
+ * It's a constructor that contains the word and an array that contains the letters of the word
+ * 
+ * @authors Dimitra Balabani, Ioannis Florios
+ *
+ */
 /*Κατασκευαστης μέσα έχει την λέξη και το πίνακα της λέξης*/
 /*Χρειάζεται για το lathosstofonien*/
 public class lexpin {
