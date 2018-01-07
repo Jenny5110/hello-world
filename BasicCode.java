@@ -8,23 +8,9 @@ import java.util.Scanner;
 /*Δέχεται ένα κείμενο και ελέγχει αν κάθε λέξη περιέχεται στο λεξικό. Αν περιέχεται στο λεξικό είναι σωστή αν όχι είναι λάθος*/
 public class BasicCode {
 	public static void main (String [] args) {
-		Scanner input = new Scanner(System.in);
-		Scanner sint = new Scanner(System.in);
-		String text = null ;
-		System.out.println("Καλώς ήρθατε στον Ορογραφικό Έλεγχο");
-		System.out.println("Αν θέλετε να γράψετε κείμενο πατήστε 1 αλλιώς πατήστε 2 για να φορτώσετε ένα αρχείο");
-		int epilogi = sint.nextInt();
-		if (epilogi == 1) {
-			System.out.println("Γράψε κείμενο");
-			text = input.nextLine();
-		} else {
-			try {
-				text = readFile.readTextFile();
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+		String text = Menu.Display();
+		if (text.equals(" ")) {
+			System.exit(0);
 		}
 		TreeMap<String,String> Dictionary = DictionaryBuild.readRecord();
 		List<String> wordsList = checkText.wordSplit(text);
