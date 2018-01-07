@@ -1,39 +1,67 @@
-import java.util.List;
-import java.util.TreeMap;
 import java.util.Scanner;
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
+import java.io.*;
+/**
+ * It's our Menu
+ * @return the text that will be checked for errors
+ * 
+ * @author Panagiotis Skias, Dimitra Balabani, Ioannis Florios
+ *
+ */
 
 public class Menu{
-	System.out.println("����� ������ ���� ����������� ������");
-	System.out.println("������� 1: ��������������� ��� �������");
-	System.out.println("������� 2: �������� ������� ��� ������ txt");
-	System.out.println("������� 3: ������ ��� �� ���������");
-	Scanner ep = new Scanner(System.in);
-	String text = null;
-	System.out.println();
-	System.out.println("������� ��� ��� ��� ����� �������� 1,2 � 3");
-	int epilogi = ep.nextInt();
+	public static String Display() {
+		System.out.println("|\t**Καλώς ήρθατε στον ορθογραφικό έλεγχο**\t|");
+		System.out.println();
+		System.out.println("->\tΕπιλογή 1: Πληκτρολογείστε ένα κείμενο");
+		System.out.println("->\tΕπιλογή 2: Εισάγετε κείμενο από αρχείο txt");
+		System.out.println("->\tΕπιλογή 3: Έξοδος από το πρόγραμμα");
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		Scanner ep = new Scanner(System.in);
+		String text = " ";
+		System.out.println();
+		System.out.println("Επιλέξτε μία από τις τρείς επιλογές 1, 2 ή 3");
+		System.out.println();
+		System.out.println();
+		int epilogi = ep.nextInt();
 
-	while (epilogi != 3) {
+		while (epilogi != 3) {
 
-		if (epilogi < 1 || epilogi > 3) {
-			System.out.println("�������� ��������������� ���� ������ ��� �� 1 ����� �� 3");
-			epilogi = ep.nextInt();
-		} else if(epilogi == 1) {
-			System.out.println("�������� �������������� �������");
-			text = input.nextLine();
-		} else {
-			try {
-				text = readFile.readTextFile();
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
+			if (epilogi < 1 || epilogi > 3) {
+				System.out.println("\t!!!Κάτι πήγε στραβά!!!");
+				System.out.println("\t***!Ξαναπροσπάθησε!***");
+				System.out.println("Παρακαλώ πληκτρολογείστε έναν αριθμό από το 1 μέχρι το 3");
+				epilogi = ep.nextInt();
+			} else if (epilogi == 1) {
+				System.out.println("Παρακαλώ πληκτρολογείστε κείμενο");
+				System.out.println("Μπορείτε να κάνετε και αντιγραφή το κείμενο σας");
+				System.out.println("\t\tΚαι να το κάνετε επικόληση εδώ");
+				
+				Scanner input = new Scanner (System.in);
+				text = input.nextLine();
+				input.close();
+				return text;
+			} else if (epilogi == 2) {
+				try {
+					System.out.println("\t\t***Οδηγίες***");
+					System.out.println("**Σε αυτή την επιλογή πρέπει να μεταβείτε στον φάκελο που είναι το αρχείο**");
+					System.out.println("**Πηγαίνετε στη μπάρα διευθύνσεων μαρκάρετε την και πραγματοποιήστε αντιγραφή**");
+					System.out.println("**έπειτα προσθέστε το σύμβολο '\' και το όνομα του αρχείου συνοδευόμενο με την κατάληξη '.txt' **");
+					System.out.println("\t!!!Βεβαιωθείτε ότι το αρχείο βρίσκετε σε κωδικοποίηση ANSI!!!");
+					System.out.println();
+					System.out.println();
+					System.out.println("Βάλτε τη διεύθυνση του αρχείου εδώ:");
+					
+					text = readFile.readTextFile();
+					return text;
+				} catch (java.io.FileNotFoundException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 		}
+	ep.close();
+	return text;
 	}
-}
-
-
