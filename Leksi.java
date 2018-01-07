@@ -1,3 +1,9 @@
+/**
+ * It's a constructor that collects information from the given word
+ * @author Panagiotis Skias
+ *
+ */
+
 public class Leksi {
 	
 	private int fonien;/*Μετρά πόσα φωνήεντα υπάρχουν χωρίς να μετράει τα φωνήεντα που έχουν τόνο ή διαλυτικά ή και τα δύο*/
