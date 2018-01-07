@@ -7,7 +7,12 @@ import java.nio.file.Files;
 import java.lang.IllegalStateException;
 import java.util.NoSuchElementException;
 import java.util.*;
-
+/**
+ * Takes the dictionary and put it in a TreeMap
+ * @return the dictionary into a TreeMap
+ * @author Dimitra Balabani, Ioannis Florios
+ *
+ */
 
 
 public class DictionaryBuild {
