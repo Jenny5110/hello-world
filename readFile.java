@@ -6,15 +6,21 @@ import java.util.Scanner;
 
 
 /**
- * Reads a file containing text and return it as a String
+ * Reads a file containing 
+ * @return it as a String
  *
- * @author Thanos
+ * @author Thanos Pakoulieris
  *
  */
 public class readFile {
 	
 	public readFile() {}
-	
+/**
+ * 	
+ * @return
+ * @throws FileNotFoundException
+ * @throws IOException
+ */
 
 
 	public static String readTextFile() throws FileNotFoundException, IOException {
