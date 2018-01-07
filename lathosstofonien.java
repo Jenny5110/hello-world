@@ -1,6 +1,12 @@
 import java.util.ArrayList;
 import java.util.HashSet;
-
+/**
+ * Makes combinations with letters
+ * @return an array list with all combinations
+ * 
+ * @author Panagiotis Skias
+ *
+ */
 public class lathosstofonien {
 
 	
