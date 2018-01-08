@@ -35,20 +35,19 @@ public class Menu{
 				epilogi = ep.nextInt();
 			} else if (epilogi == 1) {
 				System.out.println("Παρακαλώ πληκτρολογείστε κείμενο");
-				System.out.println("Μπορείτε να κάνετε και αντιγραφή το κείμενο σας");
-				System.out.println("\t\tΚαι να το κάνετε επικόληση εδώ");
+				System.out.println("Μπορείτε να κάνετε και αντιγραφή το κείμενο σας (μαρκάρισμα και Ctrl+C)");
+				System.out.println("\t\tΚαι να το κάνετε επικόλληση εδώ πατώντας Ctrl+V ή το δεξί κουμπί του ποντικιού ");
 				
 				Scanner input = new Scanner (System.in);
 				text = input.nextLine();
-				input.close();
 				return text;
 			} else if (epilogi == 2) {
 				try {
 					System.out.println("\t\t***Οδηγίες***");
 					System.out.println("**Σε αυτή την επιλογή πρέπει να μεταβείτε στον φάκελο που είναι το αρχείο**");
-					System.out.println("**Πηγαίνετε στη μπάρα διευθύνσεων μαρκάρετε την και πραγματοποιήστε αντιγραφή**");
-					System.out.println("**έπειτα προσθέστε το σύμβολο '\' και το όνομα του αρχείου συνοδευόμενο με την κατάληξη '.txt' **");
-					System.out.println("\t!!!Βεβαιωθείτε ότι το αρχείο βρίσκετε σε κωδικοποίηση ANSI!!!");
+					System.out.println("**Πηγαίνετε στη μπάρα διευθύνσεων μαρκάρετε την και πραγματοποιήστε αντιγραφή (μαρκάρισμα και Ctrl+C)**");
+					System.out.println("**επικολλήστε την (Ctrl+V ή το δεξί κουμπί του ποντικιού) και έπειτα προσθέστε το σύμβολο '\' και το όνομα του αρχείου συνοδευόμενο με την κατάληξη '.txt' **");
+					System.out.println("\t!!!Βεβαιωθείτε ότι το αρχείο βρίσκετε σε κωδικοποίηση UTF-8!!!");
 					System.out.println();
 					System.out.println();
 					System.out.println("Βάλτε τη διεύθυνση του αρχείου εδώ:");
@@ -62,6 +61,6 @@ public class Menu{
 				}
 			}
 		}
-	ep.close();
 	return text;
 	}
+}
