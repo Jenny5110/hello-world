@@ -1,3 +1,5 @@
+package diorthotis;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeMap;
@@ -10,7 +12,9 @@ import java.util.Scanner;
  *
  */
 
-/*Δέχεται ένα κείμενο και ελέγχει αν κάθε λέξη περιέχεται στο λεξικό. Αν περιέχεται στο λεξικό είναι σωστή αν όχι είναι λάθος*/
+/*Δέχεται ένα κείμενο και
+ελέγχει αν κάθε λέξη περιέχεται στο λεξικό. 
+Αν περιέχεται στο λεξικό είναι σωστή αν όχι είναι λάθος*/
 public class BasicCode {
 	public static void main (String [] args) {
 		System.out.println("\t ### Καλώς ήλθατε στο πρόγραμμά μας ###");
@@ -23,6 +27,7 @@ public class BasicCode {
 			if (text.equals(" ")) {
 				System.exit(0);		
 			}
+			long start = System.currentTimeMillis();
 			TreeMap<String,String> Dictionary = DictionaryBuild.readRecord();
 			List<String> wordsList = checkText.wordSplit(text);
 			String word;
@@ -71,6 +76,9 @@ public class BasicCode {
 				}
 			}
 			System.out.println();
+			long end = System.currentTimeMillis();
+			long sinolo = end - start;
+			System.out.println("Ο χρόνος εκτέλεσης είναι "+sinolo+" milliseconds");
 			System.out.println("-> Πατήστε 1 για να συνεχίσετε");
 			System.out.println("-> Πατήστε 0 για να το τερματίσετε");
 			con = input.nextInt();
@@ -96,5 +104,4 @@ public class BasicCode {
 			return upper.toString();
 		}
 	}
-		
 }
