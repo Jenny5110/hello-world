@@ -34,7 +34,10 @@ public class lathosstofonien {
 			for (j = 0; j < mikoslist; j++) {
 				pinakas = sindiasmoi.get(j).getWarr();
 				/*Yotas*/
-				if (pinakas [i].equals("ι") || pinakas [i].equals("η") || pinakas [i].equals("οι") || pinakas [i].equals("ει") || pinakas [i].equals("υ") ) {
+				if (pinakas [i].equals("ι") || pinakas [i].equals("η") 
+				    || pinakas [i].equals("οι") 
+				    || pinakas [i].equals("ει") 
+				    || pinakas [i].equals("υ") ) {
 					pinakas[i] = "ι";
 			    	p = pinakas.clone();
 			    	wbuilder = new StringBuilder();
