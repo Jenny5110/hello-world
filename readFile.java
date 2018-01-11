@@ -43,7 +43,6 @@ public class readFile {
 				throw new FileNotFoundException("Το αρχείο text δεν βρέθηκε ή δεν ειναι σε μορφή text" +e.getMessage());
 			} finally {
 				br.close();
-				input.close();
 			}
 			
 				
